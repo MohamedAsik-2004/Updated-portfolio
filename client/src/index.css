@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,500;1,500&family=Montserrat:wght@700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans selection:bg-primary/30 selection:text-primary overflow-x-hidden;
+    background-color: #101415;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #101415;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #4d4354;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ddb7ff;
+  }
+
+  /* Handle prefers-reduced-motion custom override */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-delay: 0s !important;
+      animation-duration: 0s !important;
+      animation-iteration-count: 1 !important;
+      transition-delay: 0s !important;
+      transition-duration: 0s !important;
+      scroll-behavior: auto !important;
+    }
+    .parallax-layer {
+      transform: none !important;
+      will-change: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Glass card styling */
+  .glass-card {
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Primary glow effect */
+  .primary-glow {
+    box-shadow: 0 0 40px rgba(221, 183, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .primary-glow:hover {
+    box-shadow: 0 0 60px rgba(221, 183, 255, 0.4);
+  }
+
+  /* Radial glow orbs */
+  .radial-glow {
+    background: radial-gradient(circle, rgba(221, 183, 255, 0.15) 0%, transparent 70%);
+  }
+
+  /* Linear-gradient Typography */
+  .text-gradient {
+    background: linear-gradient(135deg, #ddb7ff 0%, #842bd2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hover side link displacement */
+  .social-link {
+    transition: all 0.3s ease;
+  }
+  .social-link:hover {
+    transform: translateX(4px);
+    color: #ddb7ff;
+  }
+
+  /* Typography structures */
+  .display-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    @apply text-[40px] md:text-[72px] leading-tight tracking-tight;
+  }
+
+  .headline-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    @apply text-[32px] md:text-[48px] leading-tight tracking-[0.02em];
+  }
+
+  .body-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    @apply text-[16px] md:text-[18px] leading-[1.6] text-on-surface-variant;
+  }
+
+  .mono-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    @apply text-[14px] tracking-[0.05em] uppercase text-tertiary;
+  }
+}
+
+/* Custom transitions and other utilities */
+.will-change-transform {
+  will-change: transform;
+}
