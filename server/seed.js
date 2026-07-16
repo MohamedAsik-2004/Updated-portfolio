@@ -24,7 +24,7 @@ const seed = async (shouldExit = true) => {
     console.log('Database cleared. Seeding initial data...');
 
     // Seed Admin User (using credentials in walkthrough)
-    const adminPassword = 'Asik2004';
+    const adminPassword = 'Asik.2004';
     const salt = await bcrypt.genSalt(10);
     const passwordHash = await bcrypt.hash(adminPassword, salt);
 

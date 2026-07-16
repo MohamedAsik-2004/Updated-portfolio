@@ -60,19 +60,19 @@ export default function Login() {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-6 relative overflow-hidden">
-      
+
       {/* Decorative center orb */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full radial-glow pointer-events-none opacity-30 blur-3xl z-0" />
 
       <div className="w-full max-w-md rounded-2xl glass-card border border-white/10 p-8 shadow-2xl relative z-10 space-y-8">
-        
+
         {/* Header Title */}
         <div className="text-center">
           <h2 className="font-montserrat font-bold text-2xl text-white">
             Admin Panel Login
           </h2>
           <p className="font-mono text-xs text-primary mt-2">
-            Panda Coders Portfolio
+            Asik.dev Portfolio
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function Login() {
 
         {/* Input Form */}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          
+
           {/* Username */}
           <div className="space-y-2">
             <label htmlFor="username" className="mono-label text-[11px] text-tertiary">
@@ -96,9 +96,8 @@ export default function Login() {
               id="username"
               type="text"
               placeholder="Enter administrator username"
-              className={`w-full bg-surface-container border ${
-                errors.username ? 'border-red-500' : 'border-white/10'
-              } focus:border-primary/50 focus:outline-none rounded-xl px-4 py-3 text-on-surface text-sm transition-colors`}
+              className={`w-full bg-surface-container border ${errors.username ? 'border-red-500' : 'border-white/10'
+                } focus:border-primary/50 focus:outline-none rounded-xl px-4 py-3 text-on-surface text-sm transition-colors`}
               {...register('username')}
             />
             {errors.username && (
@@ -115,9 +114,8 @@ export default function Login() {
               id="password"
               type="password"
               placeholder="••••••••"
-              className={`w-full bg-surface-container border ${
-                errors.password ? 'border-red-500' : 'border-white/10'
-              } focus:border-primary/50 focus:outline-none rounded-xl px-4 py-3 text-on-surface text-sm transition-colors`}
+              className={`w-full bg-surface-container border ${errors.password ? 'border-red-500' : 'border-white/10'
+                } focus:border-primary/50 focus:outline-none rounded-xl px-4 py-3 text-on-surface text-sm transition-colors`}
               {...register('password')}
             />
             {errors.password && (
@@ -149,7 +147,7 @@ export default function Login() {
         </form>
 
         <div className="border-t border-white/5 pt-4 text-center">
-          <button 
+          <button
             type="button"
             onClick={() => navigate('/')}
             className="text-xs text-on-surface-variant hover:text-primary transition-colors inline-flex items-center gap-1 font-medium"
